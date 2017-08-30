@@ -12,6 +12,7 @@
 #define HAL_BOARD_LINUX    7
 #define HAL_BOARD_VRBRAIN  8
 #define HAL_BOARD_QURT     9
+#define HAL_BOARD_ANDROID 10
 #define HAL_BOARD_EMPTY   99
 
 /* Default board subtype is -1 */
@@ -134,6 +135,8 @@
     #include <AP_HAL/board/px4.h>
 #elif CONFIG_HAL_BOARD == HAL_BOARD_LINUX
     #include <AP_HAL/board/linux.h>
+#elif CONFIG_HAL_BOARD == HAL_BOARD_ANDROID
+    #include <AP_HAL/board/android.h>
 #elif CONFIG_HAL_BOARD == HAL_BOARD_EMPTY
     #include <AP_HAL/board/empty.h>
 #elif CONFIG_HAL_BOARD == HAL_BOARD_QURT

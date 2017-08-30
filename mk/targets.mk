@@ -20,6 +20,11 @@ linux: TOOLCHAIN = NATIVE
 linux: BUILDSYS_DEPRECATED = 1
 linux: all
 
+android: HAL_BOARD = HAL_BOARD_ANDROID
+android: TOOLCHAIN = NATIVE
+android: BUILDSYS_DEPRECATED = 1
+android: all
+
 erleboard: HAL_BOARD = HAL_BOARD_LINUX
 erleboard: TOOLCHAIN = BBONE
 erleboard: BUILDSYS_DEPRECATED = 1

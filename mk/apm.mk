@@ -2,7 +2,7 @@
 # lives. (patsubst strips the trailing slash.)
 SYSTYPE			:=	$(shell uname)
 
-ifneq ($(findstring CYGWIN, $(SYSTYPE)),) 
+ifneq ($(findstring CYGWIN, $(SYSTYPE)),)
   MK_DIR := $(shell cygpath -m ../mk)
 else
   MK_DIR := $(patsubst %/,%,$(dir $(lastword $(MAKEFILE_LIST))))
@@ -33,6 +33,10 @@ endif
 
 ifeq ($(HAL_BOARD),HAL_BOARD_LINUX)
 include $(MK_DIR)/board_linux.mk
+endif
+
+ifeq ($(HAL_BOARD),HAL_BOARD_ANDROID)
+include $(MK_DIR)/board_android.mk
 endif
 
 ifeq ($(HAL_BOARD),HAL_BOARD_PX4)
